@@ -1,0 +1,26 @@
+formatter: "markdown table"
+
+sections:
+  show:
+    - inputs
+    - modules
+    - outputs
+    - resources
+
+output:
+  file: README.md
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    {{ .Content }}
+    <!-- END_TF_DOCS -->
+
+settings:
+  description: true
+  escape: false
+  hide-empty: false
+  indent: 2
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
