@@ -1,3 +1,6 @@
+# 概要
+ALB（ターゲットグループやリスナールール含む）とAuto Scaling Group（KeyPair含む）、それらに必要なセキュリティグループの作成を行っている。
+
 <!-- BEGIN_TF_DOCS -->
 ## Modules
 
@@ -27,12 +30,10 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_instance_type"></a> [instance_type](#input_instance_type) | n/a | `string` | n/a | yes |
-| <a name="input_key_pair_name"></a> [key_pair_name](#input_key_pair_name) | キーペア指定 | `string` | `""` | no |
-| <a name="input_project"></a> [project](#input_project) | n/a | `string` | n/a | yes |
-| <a name="input_security_group_ids"></a> [security_group_ids](#input_security_group_ids) | n/a | `list(string)` | n/a | yes |
-| <a name="input_subnet_ids"></a> [subnet_ids](#input_subnet_ids) | サブネットIDs | `list(string)` | n/a | yes |
-| <a name="input_target_group_arns"></a> [target_group_arns](#input_target_group_arns) | ALBターゲットグループのarnを指定する | `list(string)` | n/a | yes |
+| <a name="input_instance_type"></a> [instance_type](#input_instance_type) | EC2インスタンスのインスタンスタイプ | `string` | n/a | yes |
+| <a name="input_project"></a> [project](#input_project) | プロジェクト名 | `string` | n/a | yes |
+| <a name="input_subnet_ids"></a> [subnet_ids](#input_subnet_ids) | EC2インスタンスを設置するサブネットID | `list(string)` | n/a | yes |
+| <a name="input_vpc_id"></a> [vpc_id](#input_vpc_id) | VPC ID | `string` | n/a | yes |
 
 ## Outputs
 

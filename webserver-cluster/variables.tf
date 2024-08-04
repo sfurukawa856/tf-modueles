@@ -1,27 +1,19 @@
 variable "project" {
-  type = string
+  description = "プロジェクト名"
+  type        = string
 }
 
-variable "key_pair_name" {
+variable "vpc_id" {
   type        = string
-  description = "キーペア指定"
-  default     = ""
+  description = "VPC ID"
 }
 
 variable "instance_type" {
-  type = string
-}
-
-variable "security_group_ids" {
-  type = list(string)
+  description = "EC2インスタンスのインスタンスタイプ"
+  type        = string
 }
 
 variable "subnet_ids" {
-  description = "サブネットIDs"
+  description = "EC2インスタンスを設置するサブネットID"
   type        = list(string)
-}
-
-variable "target_group_arns" {
-  type        = list(string)
-  description = "ALBターゲットグループのarnを指定する"
 }
