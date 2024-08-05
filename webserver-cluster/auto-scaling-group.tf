@@ -34,7 +34,7 @@ resource "aws_autoscaling_group" "asg" {
   launch_configuration = aws_launch_configuration.as.name
   vpc_zone_identifier  = var.subnet_ids
 
-  target_group_arns = aws_lb_target_group.asg.arn
+  target_group_arns = [aws_lb_target_group.asg.arn]
   health_check_type = "ELB"
 
   desired_capacity = 2
