@@ -10,7 +10,7 @@ resource "aws_launch_configuration" "as" {
   name            = "${var.project}-as-${random_string.suffix.result}"
   image_id        = "ami-0ab3794db9457b60a"
   instance_type   = var.instance_type
-  security_groups = aws_security_group.asg_sg.id
+  security_groups = [aws_security_group.asg_sg.id]
   key_name        = aws_key_pair.ssh_key.key_name
 
   user_data = <<-EOF
