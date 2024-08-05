@@ -51,6 +51,6 @@ resource "aws_autoscaling_group" "asg" {
 # key pair
 # ------------------------------------
 resource "aws_key_pair" "ssh_key" {
-  key_name   = "ssh_key"
+  key_name   = "${var.project}-ssh_key"
   public_key = file("./.ssh/ec2keypair.pub")
 }
